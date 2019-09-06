@@ -233,8 +233,7 @@ grub_disk_open (const char *name)
 
   if (! dev)
     {
-      grub_error (GRUB_ERR_UNKNOWN_DEVICE, N_("disk `%s' not found"),
-		  name);
+      grub_errno = GRUB_ERR_NONE;
       goto fail;
     }
   if (disk->log_sector_size > GRUB_DISK_CACHE_BITS + GRUB_DISK_SECTOR_BITS
