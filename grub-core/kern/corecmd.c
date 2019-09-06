@@ -46,7 +46,7 @@ grub_core_cmd_set (struct grub_command *cmd __attribute__ ((unused)),
 
   var = argv[0];
   val = grub_strchr (var, '=');
-  if (! val)
+  if (! *val)
     return grub_error (GRUB_ERR_BAD_ARGUMENT, "not an assignment");
 
   val[0] = 0;
